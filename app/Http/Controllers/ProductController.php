@@ -15,7 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('products.add_product');
+        $product = Product::with('images')->get();
+        return $product;
+        return view('index', ['products'=>$product]);
     }
 
     /**
@@ -23,7 +25,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('products.add_product');
     }
 
     /**

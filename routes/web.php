@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
 
- Route::get('/', function () {return view('index');})->name('index');
+ Route::get('/', [ProductController::class, 'index'])->name('index');
 // Route::get('/index', function () {return view('index');})->name('index');
 Route::get('/shop', function () {return view('shop');})->name('shop');
 Route::get('/shop-detail', function () {return view('shop-detail');})->name('shop-detail');

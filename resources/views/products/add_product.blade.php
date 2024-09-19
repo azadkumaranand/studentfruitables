@@ -1,4 +1,6 @@
 @extends('layouts.app')
+
+@section('title', 'Fruitables - Add Product')
 @section('content')
     <div class="container" style="margin-top: 150px">
         @if(session('success'))
