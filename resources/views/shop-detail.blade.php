@@ -21,7 +21,7 @@
                             <div class="col-lg-6">
                                 <div class="border rounded">
                                     <a href="#">
-                                        <img src="img/single-item.jpg" class="img-fluid rounded" alt="Image">
+                                        <img src="{{Illuminate\Support\Facades\Storage::url($product->images[0]['image_path'])}}" class="img-fluid rounded" alt="Image">
                                     </a>
                                 </div>
                             </div>
@@ -66,10 +66,9 @@
                                 </nav>
                                 <div class="tab-content mb-5">
                                     <div class="tab-pane active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-                                        <p>The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic words etc. 
-                                            Susp endisse ultricies nisi vel quam suscipit </p>
-                                        <p>Sabertooth peacock flounder; chain pickerel hatchetfish, pencilfish snailfish filefish Antarctic 
-                                            icefish goldeye aholehole trumpetfish pilot fish airbreathing catfish, electric ray sweeper.</p>
+                                        <p>
+                                            {{$product->short_desc}}
+                                        </p>
                                         <div class="px-2">
                                             <div class="row g-4">
                                                 <div class="col-6">

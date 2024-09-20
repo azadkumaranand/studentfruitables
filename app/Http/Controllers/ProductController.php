@@ -16,7 +16,7 @@ class ProductController extends Controller
     public function index()
     {
         $product = Product::with('images')->get();
-        return $product;
+        // return $product;
         return view('index', ['products'=>$product]);
     }
 
@@ -65,6 +65,18 @@ class ProductController extends Controller
 
         return redirect()->back()->with('success', "Product has been created!");
     }
+
+    public function shopdetails(Request $request){
+        // return Product::find($request->query('product_id'));
+        $product = Product::with('images')->where('id', '=', $request->query('product_id'))->first();
+        // return $product;
+        // return $product->images[0]['image_path'];
+        return view('shop-detail', ['product'=>$product]);
+    }
+
+    // public function shopdetails($product_id){
+    //     return $product_id;
+    // }
 
     /**
      * Display the specified resource.
